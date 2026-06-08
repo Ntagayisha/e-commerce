@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ntagayisha Bienfait | Software Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+:root{
+  --cyan:#00f2fe;
+  --orange:#ff7a00;
+  --red:#ff3b30;
+  --purple:#7b61ff;
+  --pink:#ff4ecd;
+  --lime:#39ff14;
+  --gold:#ffd700;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+url("https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+z-index:1000;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:20px;
+font-weight:700;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+list-style:none;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:14px;
+position:relative;
+}
+
+.nav-links a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+bottom:-5px;
+left:0;
+background:var(--cyan);
+transition:0.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.theme-btn{
+background:linear-gradient(90deg,var(--purple),var(--pink));
+border:none;
+padding:6px 12px;
+border-radius:20px;
+color:white;
+cursor:pointer;
+font-size:14px;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 20px 50px 20px;
+}
+
+.hero h1{
+font-size:clamp(28px,5vw,50px);
+margin-bottom:15px;
+background: linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero h2{
+color:var(--red);
+margin-bottom:20px;
+font-size:clamp(16px,3vw,22px);
+}
+
+.lead{
+max-width:600px;
+margin:auto;
+margin-bottom:25px;
+font-size:14px;
+line-height:1.6;
+}
+
+/* BUTTONS */
+.btn{
+padding:12px 24px;
+background:linear-gradient(90deg,var(--orange),var(--pink),var(--purple));
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+transition:.3s;
+display:inline-block;
+margin:5px;
+font-size:14px;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* SECTIONS */
+.container{
+padding:80px 8%;
+}
+
+section{
+margin-bottom:70px;
+}
+
+h2{
+margin-bottom:20px;
+font-size:clamp(22px,4vw,32px);
+background: linear-gradient(90deg,var(--orange),var(--gold));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+padding:20px;
+border-radius:15px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* SKILLS */
+.skill{
+margin-bottom:20px;
+}
+
+.skill-bar{
+width:100%;
+background:rgba(255,255,255,0.1);
+border-radius:20px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:10px;
+background:linear-gradient(90deg,var(--cyan),var(--pink));
+}
+
+/* FORM */
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+font-size:14px;
+}
+
+button{
+padding:12px;
+border-radius:25px;
+border:none;
+background:linear-gradient(90deg,var(--cyan),var(--lime));
+cursor:pointer;
+font-weight:600;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.7);
+font-size:13px;
+}
+
+/* MOBILE FIX */
+@media(max-width:600px){
+.nav-links{
+gap:10px;
+}
+.btn{
+display:block;
+width:100%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">BN</div>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#certs">Certifications</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button id="themeToggle" class="theme-btn">🌙</button>
+</nav>
+
+<header class="hero">
+<div>
+<h1>NTAGAYISHA BIENFAIT</h1>
+<h2 class="typing"></h2>
+<p class="lead">Building secure and scalable systems. Passionate about Cyber Security & Software Engineering.</p>
+
+<a href="files/Bienfait_CV.pdf" download class="btn">Download CV</a>
+<a href="#projects" class="btn">View Projects</a>
+
+</div>
+</header>
+
+<main class="container">
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+Junior Software Engineer at AUCA certified by Internet Society and Cisco.
+Focused on secure systems, networking, and modern web development.
+Currently expanding expertise in Cyber Security.
+</p>
+</section>
+
+<section id="certs">
+<h2>Certifications</h2>
+<div class="cards">
+<div class="card">Internet Society — Intro to Operating Systems</div>
+<div class="card">Cisco — Introduction to Computer Networks</div>
+<div class="card">ISCC — Cyber Security (In Progress)</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skill"><p>HTML & CSS</p><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+<div class="skill"><p>JavaScript</p><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+<div class="skill"><p>Networking</p><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+<div class="skill"><p>Cyber Security</p><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="cards">
+<div class="card"><h3>Portfolio Website</h3><p>Responsive portfolio with animations.</p></div>
+<div class="card"><h3>Network Lab</h3><p>Router configuration using RIP & subnetting.</p></div>
+<div class="card"><h3>Oracle Database</h3><p>PL/SQL & PDB management.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+</main>
+
+<footer>
+© <span id="year"></span> Ntagayisha Bienfait | Kigali, Rwanda | +250738183032
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const typingText=document.querySelector(".typing");
+const words=["Junior Software Engineer","Cyber Security Enthusiast","Networking Specialist"];
+let wordIndex=0,charIndex=0,deleting=false;
+
+function typeEffect(){
+let word=words[wordIndex];
+typingText.textContent=word.substring(0,charIndex);
+if(!deleting && charIndex++===word.length+1){
+deleting=true;setTimeout(typeEffect,1000);return;
+}
+if(deleting && charIndex--===0){
+deleting=false;wordIndex=(wordIndex+1)%words.length;
+}
+setTimeout(typeEffect,deleting?50:100);
+}
+typeEffect();
+</script>
+
+</body>
+</html>
